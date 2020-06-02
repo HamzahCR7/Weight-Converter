@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Weight Converter</title>
+	<meta charset="utf-8">
+		<meta name="viewport"content="with=device-width,initial-scale=1">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+			  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+			  <style>
+			  	body{
+			  		margin-top: 70px;
+			  		background: #333;
+			  	}
+			  		  	.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: 	
+
+ #00ffff;
+  color: #000;
+  text-align: center;
+}
+.footer :hover{
+color: #0066ff;
+}
+			  </style>
+
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<h1 class="display-4 text-center text-warning">Weight Converter</h1>
+			<form >
+				<div class="form-group">
+					<input id="kginpt" type="number" name="" placeholder="Enter in Kg" class="form-control form-control-lg">
+				</div>
+				
+			</form>
+			<div id="output">
+				<div class="card bg-primary pl-3 mb-2">
+					<div class="card-block">
+						<h4>Grams:</h4>
+						<div id="gmotpt"></div>
+					</div>
+				</div>
+				<div class="card bg-success  pl-3 mb-2">
+					<div class="card-block">
+						<h4>Pounds:</h4>
+						<div id="pdotpt"></div>
+					</div>
+				</div>
+				<div class="card bg-danger pl-3 mb-2">
+					<div class="card-block">
+						<h4>Ounce:</h4>
+						<div id="onceotpt"></div>
+					</div>
+				</div>
+			</div>
+			<br>
+			<form >
+				<div class="form-group">
+					<input id="gminpt" type="number" name="" placeholder="Enter in Grams" class="form-control form-control-lg">
+				</div>
+				
+			</form>
+			<div id="output1">
+				<div class="card bg-primary pl-3 mb-2">
+					<div class="card-block">
+						<h4>Kilogram:</h4>
+						<div id="kgotpt"></div>
+					</div>
+				</div>
+				<div class="card bg-success  pl-3 mb-2">
+					<div class="card-block">
+						<h4>Pounds:</h4>
+						<div id="pdotpt1"></div>
+					</div>
+				</div>
+				<div class="card bg-danger pl-3 mb-2">
+					<div class="card-block">
+						<h4>Ounce:</h4>
+						<div id="onceotpt1"></div>
+					</div>
+				</div>
+			</div>
+			<br>
+			<form >
+				<div class="form-group">
+					<input id="pdinpt" type="number" name="" placeholder="Enter in Pounds" class="form-control form-control-lg">
+				</div>
+				
+			</form>
+			<div id="output2">
+				<div class="card bg-primary pl-3 mb-2">
+					<div class="card-block">
+						<h4>Kilogram:</h4>
+						<div id="kgotpt1"></div>
+					</div>
+				</div>
+				<div class="card bg-success  pl-3 mb-2">
+					<div class="card-block">
+						<h4>Grams:</h4>
+						<div id="gmotpt1"></div>
+					</div>
+				</div>
+				<div class="card bg-danger pl-3 mb-2">
+					<div class="card-block">
+						<h4>Ounce:</h4>
+						<div id="onceotpt2"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<br>
+<br>
+<footer class="footer">
+	<h6 class="text-center">Copyright © 2020, Design by Hamzah Aslam</h6>
+
+</footer>
+<script>
+	document.getElementById('output').style.visibility ='hidden';
+	document.getElementById('kginpt').addEventListener('input',function(e){
+		// console.log(123);
+			document.getElementById('output').style.visibility='visible';
+
+		let kg=e.target.value;
+		// console.log(kg);
+		document.getElementById('gmotpt').innerHTML=(kg*1000).toFixed(2);
+				document.getElementById('pdotpt').innerHTML=(kg*2.205).toFixed(2);
+
+		document.getElementById('onceotpt').innerHTML=(kg*35.274).toFixed(2);
+
+	});
+	document.getElementById('output1').style.visibility ='hidden';
+	document.getElementById('gminpt').addEventListener('input',function(e){
+		// console.log(123);
+			document.getElementById('output1').style.visibility='visible';
+
+		let gm=e.target.value;
+		// console.log(kg);
+		document.getElementById('kgotpt').innerHTML=(gm/1000).toFixed(2);
+				document.getElementById('pdotpt1').innerHTML=((gm/1000)*2.205).toFixed(2);
+
+		document.getElementById('onceotpt1').innerHTML=((gm/1000)*35.274).toFixed(2);
+
+	});
+		document.getElementById('output2').style.visibility ='hidden';
+	document.getElementById('pdinpt').addEventListener('input',function(e){
+		// console.log(123);
+			document.getElementById('output2').style.visibility='visible';
+
+		let pd=e.target.value;
+		// console.log(kg);
+		document.getElementById('kgotpt1').innerHTML=(pd/2.205).toFixed(2);
+				document.getElementById('gmotpt1').innerHTML=((pd/2.205)*1000).toFixed(2);
+
+		document.getElementById('onceotpt2').innerHTML=((pd/2.205)*35.274).toFixed(2);
+
+	});
+	// document.getElementById('gmotpt').addEventListener('input',function(e){
+	// 	// console.log(123);
+	// 		// document.getElementById('output').style.visibility='visible';
+
+	// 	let kg=e.target.value;
+	// 	// console.log(kg);
+	// 	document.getElementById('gmotpt').innerHTML=kg*1000;
+	// 			document.getElementById('pdotpt').innerHTML=kg*2.205;
+
+	// 	document.getElementById('onceotpt').innerHTML=kg*35.274;
+
+	// });
+
+	</script>
+</body>
+</html>
